@@ -8,34 +8,23 @@
   </head>
   <body>
     <h1>Select a Song!</h1>
-    <div class="container">
-      <div class="ui segment">
-        <i class="fa fa-play">Song 1</i>
-      </div>
-      <div class="ui segment">
-        <i class="fa fa-play">Song 2</i>
-      </div>
-      <div class="ui segment">
-        <i class="fa fa-play">Song 3</i>
-      </div>
-      <div class="ui segment">
-        <i class="fa fa-play">Song 4</i>
-      </div>
-    </div>
+    <section class="tracks container">
 
-    <script type="text/template" id="songsTemplate">
-      {{#songs}}
-      <article>
-        <h2>{{title}}</h2>
-        {{body}}
-      </article>
-      {{/songs}}
+    </section>
+
+    <script type="text/template" class="tracksTemplate">
+      {{#tracks}}
+        <div class="ui segment">
+          <i class="fa fa-play">{{title}}</i>
+        </div>
+      {{/tracks}}
     </script>
 
   <script src = "bower_components/jquery/dist/jquery.js"></script>
   <script src = "bower_components/mustache/mustache.js"></script>
   <script src = "app.js"></script>
 
-  <audio id="honk" src="http://shiiiit.com/mp3/shiiiit.mp3"></audio>
+  <audio id="thrill" src="/tracks.zip/thrill-of-the-hunt.mp3"></audio>
+
   </body>
 </html>
