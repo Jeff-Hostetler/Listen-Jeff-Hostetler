@@ -23,6 +23,7 @@ $.getJSON('data.json', function(tracks){
       $(this).addClass('fa-play');
       $('h1').text( "Select a Song!" );
       document.getElementById(track.file).pause();
+      document.getElementById.currentTime=0;
     })
 
   });
