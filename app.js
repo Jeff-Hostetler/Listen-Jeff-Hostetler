@@ -4,18 +4,26 @@ $.getJSON('data.json', function(tracks){
 
   $('.tracks').html(newHTML);
 
-  $('.container').on('click', '.fa-play', function(){
-    $('i').removeClass('fa-stop');
-    $('i').addClass('fa-play');
-    $(this).removeClass('fa-play');
-    $(this).addClass('fa-stop');
-    $('h1').text("Now playing: "  );
-    document.getElementById("thrill-of-the-hunt").play();
+  $.each(tracks.tracks, function(index, track){
+      $('.'+track.file).on('click', '.fa-play', function(){
+      $('i').removeClass('fa-stop');
+      $('i').addClass('fa-play');
+      $(this).removeClass('fa-play');
+      $(this).addClass('fa-stop');
+      console.log(track.title);
+      $('audio').each(function(){
+        this.pause();
+      });
+      $('h1').text("Now playing: " + track.title);
+      document.getElementById(track.file).play();
+    })
 
-  })
-  $('.container').on('click', '.fa-stop', function(){
-    $(this).removeClass('fa-stop');
-    $(this).addClass('fa-play');
-    $('h1').text( "Select a Song!" );
-  })
+    $('.'+track.file).on('click', '.fa-stop', function(){
+      $(this).removeClass('fa-stop');
+      $(this).addClass('fa-play');
+      $('h1').text( "Select a Song!" );
+      document.getElementById(track.file).pause();
+    })
+
+  });
 });
