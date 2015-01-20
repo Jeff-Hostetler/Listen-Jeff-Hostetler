@@ -11,8 +11,10 @@ $.getJSON('data.json', function(tracks){
       $(this).removeClass('fa-play');
       $(this).addClass('fa-stop');
       $('audio').each(function(){
+        this.src = srcVar
         this.pause();
-        this.currentTime=0;
+        this.src = '';
+        this.src = srcVar
       });
       $('h1').text("Now playing: " + track.title);
       document.getElementById(track.file).play();
@@ -23,7 +25,7 @@ $.getJSON('data.json', function(tracks){
       $(this).addClass('fa-play');
       $('h1').text( "Select a Song!" );
       document.getElementById(track.file).pause();
-      document.getElementById.currentTime=0;
+      document.getElementById.currentTime = 0;
     })
 
   });
