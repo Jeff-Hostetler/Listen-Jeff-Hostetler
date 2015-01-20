@@ -14,8 +14,8 @@
 
     <script type="text/template" class="tracksTemplate">
       {{#tracks}}
-        <div class="ui segment">
-          <i class="fa fa-play">{{title}}</i>
+        <div class="ui segment {{file}}">
+          <i class="fa fa-play">{{title}} by: {{artist}}</i>
         </div>
       {{/tracks}}
     </script>
@@ -24,7 +24,10 @@
   <script src = "bower_components/mustache/mustache.js"></script>
   <script src = "app.js"></script>
 
-  <audio id="thrill" src="/tracks.zip/thrill-of-the-hunt.mp3"></audio>
+  <audio id="favourite-food" src="/tracks/favourite-food.mp3" preload="none" ></audio>
+  <audio id="thrill-of-the-hunt" src="/tracks/thrill-of-the-hunt.mp3" preload="none" ></audio>
+  <audio id="transgender-dysphoria-blues" src="/tracks/transgender-dysphoria-blues.mp3" preload="none" ></audio>
+  <audio id="where-im-from" src="/tracks/where-im-from.mp3" preload="none" ></audio>
 
   </body>
 </html>
