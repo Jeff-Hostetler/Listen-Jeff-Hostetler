@@ -10,6 +10,7 @@ $.getJSON('data.json', function(tracks){
       $('i').addClass('fa-play');
       $(this).removeClass('fa-play');
       $(this).addClass('fa-stop');
+
       $('audio').each(function(){
         var srcVar = this.src;
         this.src = '';
@@ -24,7 +25,9 @@ $.getJSON('data.json', function(tracks){
       $(this).addClass('fa-play');
       $('h1').text( "Select a Song!" );
       document.getElementById(track.file).pause();
-      document.getElementById.currentTime = 0;
+      var srcVar = document.getElementById(track.file).src;
+      document.getElementById(track.file).src = '';
+      document.getElementById(track.file).src = srcVar;
     })
 
   });
