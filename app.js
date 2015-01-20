@@ -11,10 +11,9 @@ $.getJSON('data.json', function(tracks){
       $(this).removeClass('fa-play');
       $(this).addClass('fa-stop');
       $('audio').each(function(){
-        this.src = srcVar
-        this.pause();
+        var srcVar = this.src;
         this.src = '';
-        this.src = srcVar
+        this.src = srcVar;
       });
       $('h1').text("Now playing: " + track.title);
       document.getElementById(track.file).play();
