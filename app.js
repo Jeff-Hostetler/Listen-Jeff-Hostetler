@@ -10,9 +10,9 @@ $.getJSON('data.json', function(tracks){
       $('i').addClass('fa-play');
       $(this).removeClass('fa-play');
       $(this).addClass('fa-stop');
-      console.log(track.title);
       $('audio').each(function(){
         this.pause();
+        this.currentTime=0;
       });
       $('h1').text("Now playing: " + track.title);
       document.getElementById(track.file).play();
